@@ -1,0 +1,12 @@
+project: savantenvs/qskinny
+target: fuzz_svg2qvg
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_svg2qvg/testsuite
+
+cmds:
+  - cmd: /mayhem/fuzz_svg2qvg
+    libfuzzer: true
+    timeout: 5
+    env:
+      QT_QPA_PLATFORM: offscreen

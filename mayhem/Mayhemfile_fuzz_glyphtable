@@ -1,0 +1,12 @@
+project: savantenvs/qskinny
+target: fuzz_glyphtable
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_glyphtable/testsuite
+
+cmds:
+  - cmd: /mayhem/fuzz_glyphtable
+    libfuzzer: true
+    timeout: 5
+    env:
+      QT_QPA_PLATFORM: offscreen
